@@ -1,5 +1,7 @@
 # Jiro's SpaceX company & crew
 
+![schets](./src/assets/spacex-logo.png)
+
 Assignment:
 - create a Homepage with fetch to Company info + fetch all Crew.
 - create a Crew page with search/filter by name + sort-buttons.
@@ -14,6 +16,8 @@ Documentation:
  * plug-in: Axios for fetching
  * plug-in: React-router-dom for pagerouting
 
-## not used
-* Typescript
-* testing/Jest
+## Not used...
+* Typescript (in the early stages of learning this...)
+* testing/Jest (have not written front-end tests yet)
+
+~ _Jiro 2022_
