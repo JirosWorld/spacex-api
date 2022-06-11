@@ -1,0 +1,15 @@
+.company-info__content {
+    border: 1px solid #999;
+    border-radius: 10px;
+    max-width: 80%;
+    padding: 2em;
+    margin: 1em;
+}
+
+em {
+    display: block;
+    text-align: right;
+    background-color: #ffe6ff;
+    padding: 0.3em;
+    border-radius: 10px;
+}

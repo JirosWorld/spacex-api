@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import CompanyInfo from "./components/CompanyInfo";
-import CrewTotalInfo from "./components/CrewTotalInfo";
+import CompanyInfo from "./components/CompanyInfo/CompanyInfo";
+import CrewTotalInfo from "./components/CrewTotalInfo/CrewTotalInfo";
 
 function App() {
     return (
@@ -10,9 +10,12 @@ function App() {
                 <img src={logo} className="App-logo" alt="rotating planet logo"/>
                 <h1>SpaceX API</h1>
             </header>
-            <CompanyInfo/>
+            <main>
+                <CompanyInfo />
 
-            <CrewTotalInfo/>
+                <CrewTotalInfo />
+            </main>
+
         </div>
     );
 }

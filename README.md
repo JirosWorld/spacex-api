@@ -3,9 +3,9 @@
 ![schets](./src/assets/spacex-logo.png)
 
 Assignment:
-- create a Homepage with fetch to Company info + fetch all Crew.
+- create a Homepage with fetch to Company info + fetch all Crew + limit of 3 items and 'show more' button.
 - create a Crew page with search/filter by name + sort-buttons.
-- create context for giving a 'like' to Crew items/members.
+- create session/local storage for giving a 'like' to Crew items/members that remains after browser refresh.
 
 Documentation:
 - https://github.com/r-spacex/SpaceX-API/tree/master/docs

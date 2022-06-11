@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  text-align: initial;
+  max-width: 900px;
+  padding: 0 4em;
+}
+
+h3 {
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+
 .App-logo {
   height: 4em;
   pointer-events: none;
@@ -24,7 +37,7 @@
   color: white;
 }
 
-.App-link {
+a {
   color: #61dafb;
 }
 
