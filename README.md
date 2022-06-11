@@ -10,6 +10,9 @@ Assignment:
 Documentation:
 - https://github.com/r-spacex/SpaceX-API/tree/master/docs
 
+## Hosting/deployment
+ *  https://jiro-spacex.netlify.app/
+
 ## Technique
  * React
  * CSS
@@ -17,7 +20,7 @@ Documentation:
  * plug-in: React-router-dom for pagerouting
 
 ## Not used...
-* Typescript (in the early stages of learning this...)
-* testing/Jest (have not written front-end tests yet)
+* Typescript (I am still in the early stages of learning this...)
+* testing/Jest (have not written many front-end tests yet)
 
 ~ _Jiro 2022_

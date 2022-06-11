@@ -14,6 +14,7 @@
 ## Crew Page thought process
 
 1. make Crew page in pages folder
-2. add React Router (new version) syntax on index.js
-3. add Link from Home to Crew page
-4. ...
+2. add React Router (new version) syntax on index.js and define Routes to App ("/*")
+3. import Link from BrowserRouter + add links/nav
+4. add Link from Home to Crew page
+5. ...
