@@ -23,6 +23,7 @@ function CompanyInfo() {
 
                 const result = await axios.get('https://api.spacexdata.com/v4/company/');
 
+                // convert objects to arrays that can be accessed
                 setCompanyInfoKeys(Object.keys(result.data));
                 setCompanyInfoValues(Object.values(result.data));
                 setAddressValues(Object.values(result.data.headquarters));
@@ -56,43 +57,60 @@ function CompanyInfo() {
                 {loading && <Loader/>}
 
 
+                {companyInfoKeys &&
                 <div className="company-info__content">
 
-                    <p><em>general company information</em></p>
+                        <article className="card">
+                            <div className="card-content">
+                                <h3 className="card-name">general company information</h3>
+                                <ol className="card-list">
+                                    <li>
+                                        {companyInfoKeys[2]}:
+                                        <span>{companyInfoValues[2]}</span>
+                                    </li>
+                                    <li>
+                                        {companyInfoKeys[14]}:
+                                        <span>{companyInfoValues[14]}</span>
+                                    </li>
+                                    <li>
+                                        Address: <br/>
+                                        {addressValues.map((addressItem, index) => {
+                                            return (<span key={index}>{addressItem}.<br/></span>)
+                                        })}
+                                    </li>
+                                </ol>
+                            </div>
+                        </article>
 
-                    <h3>{companyInfoKeys[2]}</h3>
-                    <p>{companyInfoValues[2]}.</p>
+                    <article className="card">
+                        <div className="card-content">
+                            <h3 className="card-name">specific company details</h3>
+                            <ol className="card-list">
+                                <li>
+                                    {companyInfoKeys[4]}:
+                                    <span>{companyInfoValues[4]} = {calculateYear()} years ago.</span>
+                                </li>
+                                <li>
+                                    There are no multiple 'locations'? Number of launch sites:
+                                    <span>{companyInfoValues[7]}</span>
+                                </li>
+                                <li>
+                                    Social URL's / {companyInfoKeys[1]} <br/>
+                                    {socialLinksValues.map((urlItem, index) => {
+                                        return (<span key={index}>
+                                            <a
+                                                href={`${urlItem}`}
+                                                rel="noreferrer"
+                                                target="_blank">{urlItem}</a>
+                                            <br/>
+                                        </span>)
+                                    })}
+                                </li>
+                            </ol>
+                        </div>
+                    </article>
 
-                    <h3>{companyInfoKeys[14]}</h3>
-                    <p>{companyInfoValues[14]}.</p>
-
-                    <h3>Address</h3>
-                    {addressValues && addressValues.map((addressItem, index) => {
-                        return (<span key={index}>{addressItem}.<br/></span>)
-                    })}
-
-                    <p><em>specific company details</em></p>
-
-                    <h3>{companyInfoKeys[4]}</h3>
-                    <p>{companyInfoValues[4]} = {calculateYear()} years ago.</p>
-
-                    <h3>Locations</h3>
-                    <p>(no multiple locations? Number of launch sites instead:)</p>
-                    <p>{companyInfoValues[7]}.</p>
-
-                    <h3>Social URL's / {companyInfoKeys[1]}</h3>
-
-                    {socialLinksValues && socialLinksValues.map((urlItem, index) => {
-                        return (<p key={index}>
-                            <a
-                                href={`${urlItem}`}
-                                rel="noreferrer"
-                                target="_blank">{urlItem}</a>
-                        </p>)
-                    })}
-
-                </div>
-
+                </div>}
 
             </section>
 

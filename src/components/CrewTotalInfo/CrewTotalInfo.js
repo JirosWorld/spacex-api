@@ -22,7 +22,7 @@ function CrewTotalInfo() {
                 const result = await axios.get("https://api.spacexdata.com/v4/crew/");
 
                 setCrewInfo(result.data);
-                console.log("clean data: ", result.data);
+
             } catch (error) {
                 setError(
                     `Something went wrong while retrieving the data - (${error.message})`
@@ -65,7 +65,10 @@ function CrewTotalInfo() {
                             <br/>
                             Agency: {person.agency}
                             <br/>
-                            <a href={`${person.wikipedia}`} rel="noreferrer" target="_blank">
+                            <a href={`${person.wikipedia}`}
+                               rel="noreferrer"
+                               className="break"
+                               target="_blank">
                                 {person.wikipedia}
                             </a></div>
 

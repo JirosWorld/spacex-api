@@ -15,6 +15,10 @@ function App() {
                 <CompanyInfo />
 
                 <CrewTotalInfo />
+
+                <div>
+                    <p>Click here to go to the Crew search Page</p>
+                </div>
             </main>
 
         </div>

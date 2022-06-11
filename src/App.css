@@ -10,6 +10,10 @@ main {
   padding: 0 4em;
 }
 
+h2 {
+  color: #ec5990;
+}
+
 h3 {
   font-size: 1.1em;
   text-transform: uppercase;
@@ -38,7 +42,12 @@ h3 {
 }
 
 a {
-  color: #61dafb;
+  color: #2b76b2;
+  font-weight: bolder;
+}
+
+a.break {
+  word-break: break-all;
 }
 
 button {
@@ -64,5 +73,13 @@ button:hover {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    max-width: 100%;
+    width: 100%;
+    padding: 0.5em;
   }
 }
