@@ -6,10 +6,29 @@
     margin: 1em;
 }
 
-.crew-info__content em {
+.crew-info__item {
+    display: flex;
+    flex-direction: row;
+}
+
+.crew-info__item  div{
+    margin: 0.3em 0 0 1em;
+}
+
+.crew-info__content ul {
+    list-style-type: none;
+}
+
+.crew-info__content strong {
     display: block;
     text-align: right;
     background-color: #ffe6cc;
     padding: 0.3em;
     border-radius: 10px;
+    width: 300px;
+}
+
+.crew-info__content img {
+    width: 90px;
+    height: auto;
 }

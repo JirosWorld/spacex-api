@@ -4,6 +4,7 @@ import CompanyInfo from "./components/CompanyInfo/CompanyInfo";
 import CrewTotalInfo from "./components/CrewTotalInfo/CrewTotalInfo";
 
 function App() {
+
     return (
         <div className="App">
             <header className="App-header">

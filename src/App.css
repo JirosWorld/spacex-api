@@ -41,6 +41,23 @@ a {
   color: #61dafb;
 }
 
+button {
+  background-color: #ec5990;
+  border: none;
+  color: white;
+  cursor: pointer;
+  letter-spacing: .3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px 0;
+  padding: 16px 10px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: deeppink;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

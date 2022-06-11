@@ -4,7 +4,7 @@
 
 Assignment:
 - create a Homepage with fetch to Company info + fetch all Crew + limit of 3 items and 'show more' button.
-- create a Crew page with search/filter by name + sort-buttons.
+- create a Crew page with search/filter by name + sort-buttons (by name and agency).
 - create session/local storage for giving a 'like' to Crew items/members that remains after browser refresh.
 
 Documentation:
@@ -12,7 +12,7 @@ Documentation:
 
 ## Technique
  * React
- * CSS/SASS
+ * CSS
  * plug-in: Axios for fetching
  * plug-in: React-router-dom for pagerouting
 
