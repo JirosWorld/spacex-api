@@ -1,4 +1,21 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: hsl(0, 0%, 95%);
+  --bg-offset: hsl(0, 0%, 100%);
+  --text: hsl(200, 15%, 8%);
+  --gray: hsl(0, 0%, 52%);
+  --pinksoft: hsl(338, 79%, 64%);
+  --border: rgba(0, 0, 0, 0.1);
+}
+
 .app {
+  background: var(--bg);
   text-align: center;
 }
 
@@ -6,12 +23,16 @@ main {
   display: flex;
   flex-direction: column;
   text-align: initial;
-  max-width: 900px;
+  max-width: 1200px;
   padding: 0 4em;
 }
 
+footer {
+  padding: 3em 0;
+}
+
 h2 {
-  color: #ec5990;
+  color: var(--pinksoft);
 }
 
 h3 {
@@ -45,7 +66,7 @@ a.break {
 }
 
 button {
-  background-color: #ec5990;
+  background-color: var(--pinksoft);
   border: none;
   color: white;
   cursor: pointer;

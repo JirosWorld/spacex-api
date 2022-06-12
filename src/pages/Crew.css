@@ -1,0 +1,112 @@
+.crew-page {
+    background: var(--bg);
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+}
+
+.crew-page img.person {
+    width: 100%;
+}
+
+.crew-page ul,
+.crew-page ol {
+    list-style: none;
+}
+
+.crew-page .wrapper {
+    width: 96%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.crew-page .wrapper-inner {
+    max-width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.crew-page .card-grid {
+    margin: 2em 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 48px;
+}
+
+.crew-page .card {
+    background-color: var(--bg-offset);
+    padding: 0;
+    box-shadow: 0 2px 4px var(--border);
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.crew-page .card:hover {
+    transform: scale(1.1);
+}
+
+.crew-page .card:hover .card-content h2 {
+    display: block;
+    -webkit-line-clamp: none;
+    overflow: visible;
+}
+
+.crew-page .card-image {
+    max-height: 150px;
+    overflow: hidden;
+}
+
+.crew-page .card-image img {
+    margin-top: -13px;
+    min-height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.crew-page .card-content {
+    padding: 32px 15px;
+}
+
+.crew-page .card-content h2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.crew-page .card-list {
+    margin-top: 16px;
+}
+
+.crew-page .card-list li {
+    color: var(--text);
+    margin-top: 8px;
+}
+
+.crew-page .card-list li span {
+    color: var(--gray);
+}
+
+/* search input */
+.crew-page .search-wrapper {
+    margin: 48px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.crew-page .search-input {
+    margin-top: 2em;
+    padding: 1em;
+    width: 90%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.search-field p img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: bottom;
+}

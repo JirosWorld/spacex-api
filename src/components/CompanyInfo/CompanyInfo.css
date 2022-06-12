@@ -1,8 +1,9 @@
 .company-info__content {
+    background-color: white;
     border: 1px solid #999;
     border-radius: 10px;
     max-width: 80%;
-    padding: 2em;
+    padding: 3em;
     margin: 1em;
 }
 

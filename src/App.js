@@ -30,7 +30,11 @@ function App() {
                 <div className="nav-link">
                     <p>➜ Click <Link to="/crew-search">for the Crew search Page</Link>!</p>
                 </div>
+
             </main>
+            <footer>
+                <p>&copy; 2022 Jiro Ghianni</p>
+            </footer>
 
         </div>
     );
