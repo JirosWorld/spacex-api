@@ -13,6 +13,7 @@ function Crew() {
     const [crewInfo, setCrewInfo] = useState([]);
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState("");
+    const [query, setQuery] = useState("");
 
 
     useEffect(() => {
@@ -44,6 +45,18 @@ function Crew() {
     console.log(items);
     const data = Object.values(items);
 
+    const search_parameters = Object.keys(Object.assign({}, ...data));
+    // data returned from an API may change, so do not use "const search_parameters = ["Name", "Agency", ...]"
+
+    function search(items) {
+        return items.filter((item) =>
+            search_parameters.some((parameter) =>
+                item[parameter].toString().toLowerCase().includes(query)
+            )
+        );
+    }
+
+
     if (error) {
         return <>{error && <p className="error-message">{error}</p>}</>;
     } else if (!loading) {
@@ -73,8 +86,11 @@ function Crew() {
                                         id="search-form"
                                         className="search-input"
                                         placeholder="Search by first- or last name..."
+                                        onChange={(e) => setQuery(e.target.value)}
                                     />
-                                </label></p></div>
+                                </label>
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -84,7 +100,7 @@ function Crew() {
 
                     <div className="wrapper">
                         <ul className="card-grid">
-                            {data.map((item) => (
+                            {search(data).map((item) => (
                                 <li key={item.id}>
                                     <article className="card">
                                         <div className="card-image">

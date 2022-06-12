@@ -17,4 +17,7 @@
 2. add React Router (new version) syntax on index.js and define Routes to App ("/*")
 3. import Link from BrowserRouter + add links/nav
 4. add Link from Home to Crew page
-5. ...
+5. add Fetch function to get all crew members
+6. display data of all crew members
+7. create query useStae and query function, wrap search function around display Map
+8. ...
