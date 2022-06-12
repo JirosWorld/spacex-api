@@ -18,9 +18,10 @@ Documentation:
  * CSS
  * plug-in: Axios for fetching
  * plug-in: React-router-dom for pagerouting
+ * my thinking in [pseudocode here](PSEUDOCODE.md).
 
 ## Not used...
-* Typescript (I am still in the early stages of learning this...)
-* testing/Jest (have not written many front-end tests yet)
+* Typescript (_I am still in the early stages of learning this..._)
+* testing/Jest (_have not written many front-end tests yet_)
 
 ~ _Jiro 2022_
