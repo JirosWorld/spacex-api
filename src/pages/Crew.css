@@ -99,14 +99,32 @@
 .crew-page .search-input {
     margin-top: 2em;
     padding: 1em;
+    border: solid 1px var(--pinksoft);
+    border-radius: 10px;
     width: 90%;
     display: inline-block;
     vertical-align: bottom;
 }
 
-.search-field p img {
+.search-field p img, .select img {
     display: inline-block;
     width: 30px;
     height: 30px;
     vertical-align: bottom;
+}
+
+select {
+    background-color: var(--bg-offset);
+    border-radius: 0.25em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    padding: 1.4em 2em 1.4em 1em;
+    margin: 0 0 0 0.3em;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    width: 90%;
+    color: var(--gray);
 }

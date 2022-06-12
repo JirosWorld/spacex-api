@@ -19,5 +19,19 @@
 4. add Link from Home to Crew page
 5. add Fetch function to get all crew members
 6. display data of all crew members
-7. create query useStae and query function, wrap search function around display Map
-8. ...
+7. create query useState and query function, wrap search function around display Map (data returned from an API may change, so do not use "const search_parameters = ["Name", "Agency", ...]")
+8. test if display changes when typing search-text in the input
+9. to create Show All function: add selectbox, based on Agency keys/values
+10. get the Agencies from the data `const filter_items = [...new Set(data.map((item) => item.agency))]`
+11. add Filter state for selectbox
+12. add "`item.agency.includes(filter)`" to the search query to narrow down results
+13. Sort function: create component with radio buttons for name/agency
+14. Sort function: `sortedItems = allItems.sort((a, b)`
+15. pay attention to props (can only be passed downwards)
+16. setItmes = data to sortItems, trying to combine these with the Data displayed
+
+## 'Like' button thought process
+
+1. Selecting a crew member on “/” or “/crew” should add a visual label
+2. difference between `session storage` and `local storage`:
+3. ...

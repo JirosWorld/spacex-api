@@ -5,6 +5,8 @@ import Loader from "../components/loader/Loader";
 import "./Crew.css";
 import infoIcon from "../assets/icons/information-square.svg";
 import searchIcon from "../assets/icons/search-icon.svg";
+import filterIcon from "../assets/icons/filter-icon.svg";
+import ItemFilterSort from "../components/ItemFilterSort/ItemFilterSort";
 
 
 function Crew() {
@@ -46,15 +48,40 @@ function Crew() {
     const data = Object.values(items);
 
     const search_parameters = Object.keys(Object.assign({}, ...data));
-    // data returned from an API may change, so do not use "const search_parameters = ["Name", "Agency", ...]"
+
+    // group data by 'all' and 'agency'
+    const filter_items = [...new Set(data.map((item) => item.agency))];
+    const [filter, setFilter] = useState("");
 
     function search(items) {
         return items.filter((item) =>
-            search_parameters.some((parameter) =>
+            item.agency.includes(filter) && search_parameters.some((parameter) =>
                 item[parameter].toString().toLowerCase().includes(query)
             )
         );
     }
+
+    // needs props
+    function sortItems(sortBy) {
+        let sortedItems = [];
+        switch (sortBy) {
+            case "A-Z":
+                sortedItems = data.sort((a, b) =>
+                    a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
+                );
+                break;
+            case "Agency":
+                sortedItems = data.sort((a, b) =>
+                    a.agency.toLowerCase() > b.agency.toLowerCase() ? 1 : -1
+                );
+                break;
+            default:
+                console.log("not an option");
+        }
+        setItems(sortedItems);
+        console.log("items sorted: ", sortedItems);
+    }
+
 
 
     if (error) {
@@ -78,7 +105,7 @@ function Crew() {
                             </h2>
                             <div className="search-field">
                                 <p>
-                                    <img src={searchIcon} className="info" alt="info icon"/> <label
+                                    <img src={searchIcon} className="info" alt="search icon"/> <label
                                     htmlFor="search-form">
                                     <input
                                         type="search"
@@ -90,6 +117,26 @@ function Crew() {
                                     />
                                 </label>
                                 </p>
+
+                                <div className="sorting">
+                                    <p>Sort order:</p>
+                                        <ItemFilterSort
+                                            sortItems={sortItems}
+                                        />
+                                </div>
+
+                                <div className="select">
+                                    <img src={filterIcon} className="info" alt="filter icon"/>
+                                    <select
+                                        onChange={(e) => setFilter(e.target.value)}
+                                        className="custom-select"
+                                        aria-label="Filter members by agency">
+                                        <option value="">Show all</option>
+                                        {filter_items.map((item, index) => (
+                                            <option value={item} key={index}>Filter By {item}</option>
+                                        ))}
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
