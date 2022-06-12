@@ -1,28 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
 import CompanyInfo from "./components/CompanyInfo/CompanyInfo";
 import CrewTotalInfo from "./components/CrewTotalInfo/CrewTotalInfo";
 import {Link} from "react-router-dom";
+import React, {useEffect} from "react";
+import Header from "./components/header/Header";
+
 
 function App() {
+
+    useEffect(() => {
+        document.title = "Jiro's SpaceX UI"
+    }, []);
 
     return (
         <div className="app">
 
-            <header className="app-header">
-                <img src={logo} className="App-logo" alt="rotating planet logo"/>
-                <h1>SpaceX API</h1>
-            </header>
+            <Header
+                title="SpaceX API"/>
+
             <main>
                 <CompanyInfo />
 
-                <div>
+                <div className="nav-link">
                     <p>➜ Click <Link to="/crew-search">for the Crew search Page</Link>!</p>
                 </div>
 
                 <CrewTotalInfo />
 
-                <div>
+                <div className="nav-link">
                     <p>➜ Click <Link to="/crew-search">for the Crew search Page</Link>!</p>
                 </div>
             </main>

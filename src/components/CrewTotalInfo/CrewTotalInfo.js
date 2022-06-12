@@ -2,6 +2,8 @@ import React, {useMemo, useEffect, useState} from "react";
 import axios from "axios";
 import Loader from "../loader/Loader";
 import './CrewTotalInfo.css';
+import infoIcon from "../../assets/icons/information-square.svg";
+
 
 function CrewTotalInfo() {
 
@@ -80,7 +82,7 @@ function CrewTotalInfo() {
 
     return (
         <section className="crew-info">
-            <h2>Crew information</h2>
+            <h2><img src={infoIcon} className="info" alt="info icon"/> Crew information</h2>
 
             <div className="crew-info__content">
 

@@ -3,6 +3,9 @@ import axios from "axios";
 import Loader from "../loader/Loader";
 import './CompanyInfo.css';
 import calculateYear from "../../helpers/calculateYear";
+import infoIcon from "../../assets/icons/information-square.svg";
+import logo from "../../logo.svg";
+
 
 function CompanyInfo() {
 
@@ -50,8 +53,7 @@ function CompanyInfo() {
             {companyInfoValues &&
 
             <section className="company-info">
-
-                <h2>Company information</h2>
+                <h2><img src={infoIcon} className="info" alt="info icon"/> Company information</h2>
 
                 {error && <p className="error-message">{error}</p>}
                 {loading && <Loader/>}
