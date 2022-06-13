@@ -75,7 +75,7 @@ function CrewTotalInfo() {
                                 {person.wikipedia}
                             </a></div>
 
-                        <LikeButton />
+                        <LikeButton person={person}/>
 
                     </div>
                 </li>

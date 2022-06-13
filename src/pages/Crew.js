@@ -54,9 +54,9 @@ function Crew() {
 
     function search(items) {
         return items.filter((item) =>
-            item.agency.includes(filter) && search_parameters.some((parameter) =>
-                item[parameter].toString().toLowerCase().includes(query)
-            )
+                item.agency.includes(filter) && search_parameters.some((parameter) =>
+                    item[parameter].toString().toLowerCase().includes(query)
+                )
         );
     }
 
@@ -81,7 +81,6 @@ function Crew() {
     }
 
 
-
     if (error) {
         return <>{error && <p className="error-message">{error}</p>}</>;
     } else if (!loading) {
@@ -103,24 +102,25 @@ function Crew() {
                             </h2>
                             <div className="search-field">
                                 <p>
-                                    <img src={searchIcon} className="info" alt="search icon"/> <label
-                                    htmlFor="search-form">
-                                    <input
-                                        type="search"
-                                        name="search-form"
-                                        id="search-form"
-                                        className="search-input"
-                                        placeholder="Search by first- or last name..."
-                                        onChange={(e) => setQuery(e.target.value)}
-                                    />
-                                </label>
+                                    <img src={searchIcon} className="info" alt="search icon"/>
+                                    <label
+                                        htmlFor="search-form">
+                                        <input
+                                            type="search"
+                                            name="search-form"
+                                            id="search-form"
+                                            className="search-input"
+                                            placeholder="Search by first- or last name..."
+                                            onChange={(e) => setQuery(e.target.value)}
+                                        />
+                                    </label>
                                 </p>
 
                                 <div className="sorting">
                                     <p>Sort order:</p>
-                                        <ItemFilterSort
-                                            sortItems={sortItems}
-                                        />
+                                    <ItemFilterSort
+                                        sortItems={sortItems}
+                                    />
                                 </div>
 
                                 <div className="select">
@@ -131,7 +131,8 @@ function Crew() {
                                         aria-label="Filter members by agency">
                                         <option value="">Show all</option>
                                         {filter_items.map((item, index) => (
-                                            <option value={item} key={index}>Filter By {item}</option>
+                                            <option value={item} key={index}>Filter
+                                                By {item}</option>
                                         ))}
                                     </select>
                                 </div>

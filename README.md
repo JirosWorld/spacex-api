@@ -17,7 +17,7 @@ or use the 'npm start button' of your favorite IDE. Open http://localhost:3000 t
 ### Assignment:
 - create a Homepage with fetch to Company info + fetch all Crew + limit of 3 items and 'show more' button.
 - create a Crew page with search/filter by name + sort-buttons (by name and agency).
-- create session/local storage for giving a 'like' to Crew items/members that remains after browser refresh.
+- create session/local storage for giving a 'like' to Crew items/members that remains after browser refresh (NOTE: BROWSER RERFRESH FEATURE DOESN'T WORK, can only be viewed in browser's `DevTools >> Application >> LocalStorage`).
 
 ### Documentation:
 - https://github.com/r-spacex/SpaceX-API/tree/master/docs

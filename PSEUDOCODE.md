@@ -38,4 +38,6 @@ BUG: when you search for "ja" this will not only result in people with the name 
 1. Selecting a crew member on “/” or “/crew” should add a visual label (orr button?)
 2. add liked/clicked classnames for styles that need to be toggled when clicked
 3. difference between `sessionStorage` and `localStorage`:localStorage data does not expire, whereas sessionStorage data is cleared when the page session ends. A unique page session gets created once a document is loaded in a browser tab. Page sessions are valid for only one tab at a time.
-4. 
+4. in dev tool: Application tab > local storage section for debugging
+5. toggling button works, and adding string/name to localStorage can be viewed in browser's `DevTools >> Application >> LocalStorage`) but **unfortunately it doesn't work properly** as it does not persist on refresh.
+6. ? I think I may need to use Context/Contextprovider to solve this problem, not sure yet.

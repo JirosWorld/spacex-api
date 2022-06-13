@@ -19,19 +19,20 @@ function App() {
                 title="SpaceX API"/>
 
             <main>
-                <CompanyInfo />
+                <CompanyInfo/>
 
                 <div className="nav-link">
                     <p>➜ Click <Link to="/crew-search">for the Crew search Page</Link>!</p>
                 </div>
 
-                <CrewTotalInfo />
+                <CrewTotalInfo/>
 
                 <div className="nav-link">
                     <p>➜ Click <Link to="/crew-search">for the Crew search Page</Link>!</p>
                 </div>
 
             </main>
+
             <footer>
                 <p>&copy; 2022 Jiro Ghianni</p>
             </footer>

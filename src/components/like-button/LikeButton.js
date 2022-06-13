@@ -1,15 +1,19 @@
-import React, {useState} from 'react';
-import { ReactComponent as Hand } from "../../assets/icons/like-icon.svg";
+import React, {useEffect, useState} from 'react';
+import {ReactComponent as Hand} from "../../assets/icons/like-icon.svg";
 import "./LikeButton.css";
 
 
-// example of logic class: const error = this.state.valid ? '' : 'error'
-// const classes = `form-control round-lg ${error}`
-// <input className={`form-control round-lg ${this.state.valid ? '' : 'error'}`} />
-
-function LikeButton() {
+function LikeButton({person}) {
     const [liked, setLiked] = useState(null);
     const [clicked, setClicked] = useState(false);
+
+    // keep like-button state on refresh
+    const [storeLikedName, setStoreLikedName] = useState(localStorage.getItem('LIKE_BUTTON'));
+
+    useEffect(() => {
+        window.localStorage.setItem('LIKE_BUTTON', JSON.stringify(storeLikedName))
+    }, [storeLikedName]);
+
 
     return (
         <div className="like-button__position">
@@ -17,17 +21,21 @@ function LikeButton() {
                 onClick={() => {
                     setLiked(!liked);
                     setClicked(true);
+                    setStoreLikedName({
+                        name: person.name
+                    });
                 }}
                 onAnimationEnd={() => setClicked(false)}
                 className={`like-button-wrapper ${liked ? 'like-button-wrapper-liked' : ' '}
                 ${clicked ? 'like-button-wrapper-clicked' : ' '}`}
             >
                 <div className="like-button">
-                    <Hand />
-                    <span>Like</span>
-                    <span className={`suffix ${liked ? 'suffix-liked' : 'hide'}`}>d</span>
+                    <Hand/>
+                    <span>{liked ? <>LIKED</> : <>LIKE</>}</span>
+                    <span className={`suffix ${clicked ? 'suffix-liked' : 'hide'}`}>!</span>
                 </div>
             </button>
+
         </div>
     );
 }
