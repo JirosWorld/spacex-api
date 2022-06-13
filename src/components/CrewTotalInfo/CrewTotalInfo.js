@@ -3,6 +3,7 @@ import axios from "axios";
 import Loader from "../loader/Loader";
 import './CrewTotalInfo.css';
 import infoIcon from "../../assets/icons/information-square.svg";
+import LikeButton from "../like-button/LikeButton";
 
 
 function CrewTotalInfo() {
@@ -73,6 +74,8 @@ function CrewTotalInfo() {
                                target="_blank">
                                 {person.wikipedia}
                             </a></div>
+
+                        <LikeButton />
 
                     </div>
                 </li>

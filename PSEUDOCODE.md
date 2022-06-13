@@ -1,15 +1,16 @@
 ## Home Page thought process
 
 1. make component (+ directory) for Company fetch + add component to App/Home page
-2. fetch all from the API endpoint: https://api.spacexdata.com/v4/company <= is an object (!) instead of an array, so needs to be parsed into an Array multiple times
-3. take care to set useState to the right types (obj {} or arr [])
-4. put Company output data in divs: Display the general company information: Name, summary, address + Display specific company details: company age (= a calculated difference between today's year and the founding year), locations, (social) urls
-5. make component for Crew fetch + directory with styles
-6. fetch all from the API endpoint: https://api.spacexdata.com/v4/crew
-7. map Crew output data in List Items: Display a list of the SpaceX crew members: Photo, name, agency, wikipedia entry
-8. create component for smaller listview, with a maximume of 3 items.
-9. 3 items limit: needs to be a sliced Array and needs React useMemo: only runs when one of its dependencies update.
-10. fix: every time the 'show more' button is clicked, React keeps the window on the same view, so add scrollTo bottom function.
+2. change all default files from create-react-app, such as icons and the app Title
+3. fetch all from the API endpoint: https://api.spacexdata.com/v4/company <= is an object (!) instead of an array, so needs to be parsed into an Array multiple times
+4. take care to set useState to the right types (obj {} or arr [])
+5. put Company output data in divs: Display the general company information: Name, summary, address + Display specific company details: company age (= a calculated difference between today's year and the founding year), locations, (social) urls
+6. make component for Crew fetch + directory with styles
+7. fetch all from the API endpoint: https://api.spacexdata.com/v4/crew
+8. map Crew output data in List Items: Display a list of the SpaceX crew members: Photo, name, agency, wikipedia entry
+9. create component for smaller listview, with a maximum of 3 items.
+10. 3 items limit: needs to be a sliced Array and needs React useMemo: only runs when one of its dependencies update.
+11. fix: every time the 'show more' button is clicked, React keeps the window on the same view, so add scrollTo bottom function.
 
 ## Crew Page thought process
 
@@ -17,7 +18,7 @@
 2. add React Router (new version) syntax on index.js and define Routes to App ("/*")
 3. import Link from BrowserRouter + add links/nav
 4. add Link from Home to Crew page
-5. add Fetch function to get all crew members
+5. add Fetch function to get all crew members from the API endpoint: https://api.spacexdata.com/v4/crew
 6. display data of all crew members
 7. create query useState and query function, wrap search function around display Map (data returned from an API may change, so do not use "const search_parameters = ["Name", "Agency", ...]")
 8. test if display changes when typing search-text in the input
@@ -30,8 +31,11 @@
 15. pay attention to props (can only be passed downwards)
 16. setItmes = data to sortItems, trying to combine these with the Data displayed
 
+BUG: when you search for "ja" this will not only result in people with the name "ja" but also everyone working at JAXA.
+
 ## 'Like' button thought process
 
-1. Selecting a crew member on “/” or “/crew” should add a visual label
-2. difference between `session storage` and `local storage`:
-3. ...
+1. Selecting a crew member on “/” or “/crew” should add a visual label (orr button?)
+2. add liked/clicked classnames for styles that need to be toggled when clicked
+3. difference between `sessionStorage` and `localStorage`:localStorage data does not expire, whereas sessionStorage data is cleared when the page session ends. A unique page session gets created once a document is loaded in a browser tab. Page sessions are valid for only one tab at a time.
+4. 

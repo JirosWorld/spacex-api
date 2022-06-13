@@ -12,7 +12,6 @@ import ItemFilterSort from "../components/ItemFilterSort/ItemFilterSort";
 function Crew() {
 
     const [items, setItems] = useState([]);
-    const [crewInfo, setCrewInfo] = useState([]);
     const [loading, toggleLoading] = useState(false);
     const [error, setError] = useState("");
     const [query, setQuery] = useState("");
@@ -44,7 +43,7 @@ function Crew() {
             );
     }, []);
 
-    console.log(items);
+    // console.log(items);
     const data = Object.values(items);
 
     const search_parameters = Object.keys(Object.assign({}, ...data));
@@ -61,7 +60,6 @@ function Crew() {
         );
     }
 
-    // needs props
     function sortItems(sortBy) {
         let sortedItems = [];
         switch (sortBy) {
@@ -79,7 +77,7 @@ function Crew() {
                 console.log("not an option");
         }
         setItems(sortedItems);
-        console.log("items sorted: ", sortedItems);
+        // console.log("items sorted: ", sortedItems);
     }
 
 
