@@ -3,6 +3,7 @@ import axios from "axios";
 import Loader from "../loader/Loader";
 import './CrewTotalInfo.css';
 import infoIcon from "../../assets/icons/information-square.svg";
+import StyledButton from '../styled-components/StylizedButton';
 import LikeButton from "../like-button/LikeButton";
 
 
@@ -95,7 +96,7 @@ function CrewTotalInfo() {
                     {expanded ? (
                         <strong>... these were all the crew-members!</strong>
                     ) : (
-                        <button onClick={showMore}>show more</button>
+                        <StyledButton onClick={showMore}>show more</StyledButton>
                     )}
                 </div>
 

@@ -35,7 +35,7 @@ BUG: when you search for "ja" this will not only result in people with the name 
 
 ## 'Like' button thought process
 
-1. Selecting a crew member on “/” or “/crew” should add a visual label (orr button?)
+1. Selecting a crew member on “/” home should add a visual label (or button?)
 2. add liked/clicked classnames for styles that need to be toggled when clicked
 3. difference between `sessionStorage` and `localStorage`:localStorage data does not expire, whereas sessionStorage data is cleared when the page session ends. A unique page session gets created once a document is loaded in a browser tab. Page sessions are valid for only one tab at a time.
 4. in dev tool: Application tab > local storage section for debugging
