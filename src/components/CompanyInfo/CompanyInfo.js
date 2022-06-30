@@ -4,10 +4,12 @@ import Loader from "../loader/Loader";
 import './CompanyInfo.css';
 import calculateYear from "../../helpers/calculateYear";
 import infoIcon from "../../assets/icons/information-square.svg";
-import logo from "../../logo.svg";
 
 
 function CompanyInfo() {
+
+    const [companyInfo, setCompanyInfo] = useState({});
+    const [addressInfo, setAddressInfo] = useState({});
 
     const [companyInfoKeys, setCompanyInfoKeys] = useState({});
     const [companyInfoValues, setCompanyInfoValues] = useState({});
@@ -26,10 +28,25 @@ function CompanyInfo() {
 
                 const result = await axios.get('https://api.spacexdata.com/v4/company/');
 
+                console.log("Alle inhoud van object name: " + result.data["name"]);
+                console.log("Alle inhoud van object headq/adress: " + result.data["headquarters"[0]]);
+                setCompanyInfo(result.data);
+
+                const {
+                    headquarters: {
+                        address,
+                        city,
+                        state
+                    }
+                } = setAddressInfo(result.data);
+                console.log("mijn adresobject 1 niveau: " + addressInfo.address); // prints: 'Rocket Road'
+                console.log("mijn adresobject 1 niveau: " + addressInfo.city); // prints: 'Hawthorne'
+                console.log("mijn adresobject 1 niveau: " + addressInfo.state); // prints: 'California'
+
                 // convert objects to arrays that can be accessed
                 setCompanyInfoKeys(Object.keys(result.data));
                 setCompanyInfoValues(Object.values(result.data));
-                setAddressValues(Object.values(result.data.headquarters));
+                // setAddressValues(Object.values(result.data.headquarters));
                 setSocialLinksValues(Object.values(result.data.links));
 
             } catch (error) {
@@ -67,18 +84,21 @@ function CompanyInfo() {
                                 <h3 className="card-name">general company information</h3>
                                 <ol className="card-list">
                                     <li>
-                                        {companyInfoKeys[2]}:
-                                        <span>{companyInfoValues[2]}</span>
+                                        Company name:
+                                        <span>{companyInfo["name"]}</span>
                                     </li>
                                     <li>
-                                        {companyInfoKeys[14]}:
-                                        <span>{companyInfoValues[14]}</span>
+                                        Summary:
+                                        <span>{companyInfo["summary"]}</span>
                                     </li>
                                     <li>
                                         Address: <br/>
-                                        {addressValues.map((addressItem, index) => {
-                                            return (<span key={index}>{addressItem}.<br/></span>)
-                                        })}
+                                        Street: {/* companyInfo["headquarters"] */ }<br/>
+                                        City: <br/>
+                                        State: <br/>
+                                        {/*{addressValues.map((addressItem, index) => {*/}
+                                        {/*    return (<span key={index}>{addressItem}.<br/></span>)*/}
+                                        {/*})}*/}
                                     </li>
                                 </ol>
                             </div>
